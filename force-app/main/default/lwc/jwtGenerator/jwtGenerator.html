@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="JWT Generator">
+        <template lwc:if={loading}>
+            <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+        </template>
+        <lightning-input value={username} label="Subject (a Salesforce Username)" onchange={handleUsernameChange} type="email" required="true"></lightning-input>
+        <lightning-combobox name="audience" label="Audience" value={audience} placeholder="Select Audience" options={audienceOptions} onchange={handleAudienceChange} required="true"></lightning-combobox>
+        <lightning-input value={clientId} label="Issuer (Client Id for External Client App)" onchange={handleClientIdChange} required="true"></lightning-input>
+        <lightning-input value={certificateName} label="Certificate Name" onchange={handleCertificateNameChange} required="true"></lightning-input>
+        <div>
+            <b>Generated token:</b><br>
+            {token}
+        </div>
+        <div slot="footer">
+            <lightning-button variant="brand" label="Generate Token" title="Generate Token" onclick={generateToken} ></lightning-button> 
+        </div>
+    </lightning-card>
+</template>
