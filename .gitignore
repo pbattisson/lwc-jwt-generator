@@ -2,3 +2,5 @@
 .sfdx
 .vscode
 hardis-report
+.DS_Store
+config

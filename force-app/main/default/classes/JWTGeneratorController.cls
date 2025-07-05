@@ -34,7 +34,7 @@ public with sharing class JWTGeneratorController {
 
         String token = jws.getCompactSerialization();
 
-        Auth.JWTBearerTokenExchange bearer = new Auth.JWTBearerTokenExchange(tokenEndpoint, jws);        
+        Auth.JWTBearerTokenExchange bearer = new Auth.JWTBearerTokenExchange(tokenEndpoint, jws);
 
         return bearer.getAccessToken();
     }

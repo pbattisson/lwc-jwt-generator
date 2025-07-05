@@ -1,5 +1,6 @@
-import { LightningElement, wire } from 'lwc';
+import { LightningElement } from 'lwc';
 import generateJSONWebToken  from '@salesforce/apex/JWTGeneratorController.generateJSONWebToken';
+import LightningAlert from 'lightning/alert';
 
 export default class JwtGenerator extends LightningElement {
 
@@ -34,6 +35,10 @@ export default class JwtGenerator extends LightningElement {
         ]
     }
 
+    get buttonDisabled() {
+        return !(this.username !== undefined && this.audience !== undefined && this.clientId !== undefined && this.certificateName !== undefined);
+    }
+
     async generateToken() {
         this.loading = true;
         try {
@@ -41,7 +46,7 @@ export default class JwtGenerator extends LightningElement {
         } catch(error) {
             this.token = undefined;
             await LightningAlert.open({
-                message: error,
+                message: error.body.message,
                 theme: 'error', // a red theme intended for error states
                 label: 'Error', // this is the header text
             });
