@@ -1,0 +1,26 @@
+{
+  "name": "lwc-jwt",
+  "version": "1.0.0",
+  "description": "A simple LWC you can deploy to your org to help you generate a JWT for an integration.",
+  "homepage": "https://github.com/pbattisson/lwc-jwt-generator#readme",
+  "bugs": {
+    "url": "https://github.com/pbattisson/lwc-jwt-generator/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pbattisson/lwc-jwt-generator.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:unit": "sfdx-lwc-jest",
+    "test:unit:debug": "sfdx-lwc-jest --debug",
+    "test:unit:watch": "sfdx-lwc-jest --watch"
+  },
+  "devDependencies": {
+    "@salesforce/sfdx-lwc-jest": "^7.1.2"
+  }
+}

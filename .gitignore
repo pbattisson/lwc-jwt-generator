@@ -4,3 +4,5 @@
 hardis-report
 .DS_Store
 config
+coverage
+node_modules

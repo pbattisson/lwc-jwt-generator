@@ -13,19 +13,19 @@ export default class JwtGenerator extends LightningElement {
     loading = false;
 
     handleUsernameChange(event) {
-        this.username = event.detail.value;
+        this.username = event.target.value;
     }
 
     handleAudienceChange(event) {
-        this.audience = event.detail.value;
+        this.audience = event.target.value;
     }
 
     handleClientIdChange(event) {
-        this.clientId = event.detail.value;
+        this.clientId = event.target.value;
     }
 
     handleCertificateNameChange(event) {
-        this.certificateName = event.detail.value;
+        this.certificateName = event.target.value;
     }
 
     get audienceOptions() {
